@@ -4,7 +4,7 @@ use std::net::TcpListener;
 async fn health_check_works() {
     let address = spawn_app().await;
     let endpoint = format!("http://{address}/health_check");
-    
+
     let response = reqwest::Client::new()
         .get(endpoint)
         .send()
