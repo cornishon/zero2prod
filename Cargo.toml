@@ -10,7 +10,7 @@ rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
 
 [dependencies]
 axum = "0.6.17"
-chrono = "0.4.24"
+chrono = { version = "0.4.24", default_features = false }
 config = "0.13.3"
 serde = { version = "1.0.160", features = ["derive"] }
 sqlx = { version = "0.6.3", features = ["runtime-tokio-rustls", "macros", "postgres", "chrono", "uuid", "migrate"] }
