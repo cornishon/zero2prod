@@ -67,6 +67,6 @@ async fn subscribe_returns_a_400_when_data_is_missing() {
 async fn spawn_app() -> String {
     let listener = TcpListener::bind("127.0.0.1:0").expect("to bind a random port");
     let port = listener.local_addr().unwrap().port();
-    tokio::spawn(zero2prod::run(listener));
+    tokio::spawn(zero2prod::startup::run(listener));
     format!("http://127.0.0.1:{port}")
 }
